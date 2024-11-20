@@ -19,7 +19,9 @@ const Navbar = () => {
   const user = useSelector((state) => state.auth.user);
 
   const getUser = async () => {
-    const res = await axios.get("http://localhost:5000/api/get-user");
+    const res = await axios.get(
+      "https://quickplate-backend.onrender.com/api/get-user"
+    );
     const data = await res.data;
     dispatch(setUser(data.user));
     dispatch(loginUser());
@@ -54,7 +56,8 @@ const Navbar = () => {
           {new Date().toUTCString().slice(0, 16)}
         </h3> */}
         <h1 className="text-4xl font-extrabold text-gray-900 leading-tight tracking-tight bg-gradient-to-r from-green-600 to-blue-700 text-transparent bg-clip-text p-2 flex items-center justify-center">
-          QuickPlate: <span className="ml-3 mt-2">Quick Bites, Big Smiles!</span>
+          QuickPlate:{" "}
+          <span className="ml-3 mt-2">Quick Bites, Big Smiles!</span>
         </h1>
         {/* <h1 className="text-2xl font-bold">QuickBite : Taste the Speed</h1> */}
       </div>

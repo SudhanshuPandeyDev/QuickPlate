@@ -11,9 +11,12 @@ const ResetPassword = () => {
   const handleResetPassword = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put("http://localhost:5000/api/reset-password", {
-        email,
-      });
+      const res = await axios.put(
+        "https://quickplate-backend.onrender.com/api/reset-password",
+        {
+          email,
+        }
+      );
       const data = await res.data;
       if (data.success) {
         toast.success(data.message);

@@ -13,11 +13,14 @@ const Signup = () => {
   // form gives us an event e by default
   const handleSignup = async (e) => {
     e.preventDefault();
-    const res = await axios.post(`http://localhost:5000/api/signup`, {
-      name,
-      email,
-      password,
-    });
+    const res = await axios.post(
+      `https://quickplate-backend.onrender.com/api/signup`,
+      {
+        name,
+        email,
+        password,
+      }
+    );
     const data = await res.data;
     if (res.status === 201) {
       toast.success(data.message);

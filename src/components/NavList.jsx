@@ -5,7 +5,9 @@ import toast from "react-hot-toast";
 
 const NavList = ({ toggleNav, setToggleNav, auth }) => {
   const handleLogout = async () => {
-    const res = await axios.get("http://localhost:5000/api/logout");
+    const res = await axios.get(
+      "https://quickplate-backend.onrender.com/api/logout"
+    );
     const data = await res.data;
     toast.success(data.message);
     window.location.href = "/"; // change the current url of the website

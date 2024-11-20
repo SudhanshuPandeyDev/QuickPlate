@@ -13,7 +13,9 @@ const Success = () => {
   }, []);
 
   const clearCart = async () => {
-    const res = await axios.get("http://localhost:5000/api/clear-cart");
+    const res = await axios.get(
+      "https://quickplate-backend.onrender.coms/api/clear-cart"
+    );
     const data = await res.data;
     toast.success(data.message);
   };
